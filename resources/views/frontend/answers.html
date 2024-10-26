@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="assets/fonts/font.css">
+
+    <!-- fontawesome 5 -->
+    <link rel="stylesheet" href="../../../../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+
+    <!-- bootstrap 5 -->
+    <link rel="stylesheet" href="assets/css/Bootstrap/bootstrap.min.css">
+
+    <!-- Custom Css Files -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/animation.css">
+    
+    <!-- result css -->
+    <link rel="stylesheet" href="assets/css/result_style.css">
+</head>
+<style>
+    /* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f5fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    /* width: 350px; */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Question Card Styles */
+.card {
+    background-color: #f8f9fd;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.question-header h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+.question-header p {
+    font-size: 14px;
+    color: #777;
+    margin-top: 5px;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.option {
+    background-color: #dedeea;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.option:hover {
+    background-color: #c5c5e1;
+    transform: scale(1.05);
+}
+
+.option:active {
+    background-color: #b1b1cf;
+}
+
+/* Score and Navigation Section */
+.score-navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f0f2f7;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.score-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.score-section p {
+    font-size: 14px;
+    color: #555;
+}
+
+#question-number, #answer-number {
+    font-weight: bold;
+    color: #222;
+}
+
+.controls-section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.control-btn {
+    background-color: #e0e3f3;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.control-btn:hover {
+    background-color: #d2d4e8;
+}
+
+.control-btn:active {
+    background-color: #bfc3d9;
+}
+
+</style>
+<body>
+
+    <div class="container">
+       <div class="row">
+        <div class="col-lg-6 my-4">
+             <!-- Question Card -->
+            <div class="card">
+                <div class="question-banner">
+                    <img src="assets/images/3.png" alt="">
+                </div>
+                <div class="question-header">
+                    <h2>Which Planet is the Red Planet?</h2>
+                    <p>Which planet is known as the red planet?</p>
+                </div>
+                <div class="options-grid">
+                    <button class="option" id="option1">A. Jupiter</button>
+                    <button class="option" id="option2">B. Mars</button>
+                    <button class="option" id="option3">C. Venus</button>
+                    <button class="option" id="option4">D. Saturn</button>
+                </div>
+                 <!-- Score and Navigation Section -->
+            <div class="score-navigation">
+                <div class="score-section">
+                    <p>Question: <span id="question-number">50</span></p>
+                    <p>Answer: <span id="answer-number">50</span></p>
+                </div>
+    
+                <div class="controls-section">
+                    <button class="control-btn">Question</button>
+                    <button class="control-btn">Answer</button>
+                    <button class="control-btn">Hints</button>
+                </div>
+            </div>
+            </div>
+    
+           
+    
+    
+           
+        </div>
+        
+        <div class="col-lg-6 my-4">
+            <!-- Question Card -->
+           <div class="card">
+               <div class="question-banner">
+                   <img src="assets/images/3.png" alt="">
+               </div>
+               <div class="question-header">
+                   <h2>Which Planet is the Red Planet?</h2>
+                   <p>Which planet is known as the red planet?</p>
+               </div>
+               <div class="options-grid">
+                   <button class="option" id="option1">A. Jupiter</button>
+                   <button class="option" id="option2">B. Mars</button>
+                   <button class="option" id="option3">C. Venus</button>
+                   <button class="option" id="option4">D. Saturn</button>
+               </div>
+                <!-- Score and Navigation Section -->
+           <div class="score-navigation">
+               <div class="score-section">
+                   <p>Question: <span id="question-number">50</span></p>
+                   <p>Answer: <span id="answer-number">50</span></p>
+               </div>
+   
+               <div class="controls-section">
+                   <button class="control-btn">Question</button>
+                   <button class="control-btn">Answer</button>
+                   <button class="control-btn">Hints</button>
+               </div>
+           </div>
+           </div>
+          
+       </div>
+
+        <div class="col-lg-6 my-4">
+            <!-- Question Card -->
+           <div class="card">
+               <div class="question-banner">
+                   <img src="assets/images/3.png" alt="">
+               </div>
+               <div class="question-header">
+                   <h2>Which Planet is the Red Planet?</h2>
+                   <p>Which planet is known as the red planet?</p>
+               </div>
+               <div class="options-grid">
+                   <button class="option" id="option1">A. Jupiter</button>
+                   <button class="option" id="option2">B. Mars</button>
+                   <button class="option" id="option3">C. Venus</button>
+                   <button class="option" id="option4">D. Saturn</button>
+               </div>
+                <!-- Score and Navigation Section -->
+           <div class="score-navigation">
+               <div class="score-section">
+                   <p>Question: <span id="question-number">50</span></p>
+                   <p>Answer: <span id="answer-number">50</span></p>
+               </div>
+   
+               <div class="controls-section">
+                   <button class="control-btn">Question</button>
+                   <button class="control-btn">Answer</button>
+                   <button class="control-btn">Hints</button>
+               </div>
+           </div>
+           </div>
+          
+       </div>
+
+        <div class="col-lg-6 my-4">
+            <!-- Question Card -->
+           <div class="card">
+               <div class="question-banner">
+                   <img src="assets/images/3.png" alt="">
+               </div>
+               <div class="question-header">
+                   <h2>Which Planet is the Red Planet?</h2>
+                   <p>Which planet is known as the red planet?</p>
+               </div>
+               <div class="options-grid">
+                   <button class="option" id="option1">A. Jupiter</button>
+                   <button class="option" id="option2">B. Mars</button>
+                   <button class="option" id="option3">C. Venus</button>
+                   <button class="option" id="option4">D. Saturn</button>
+               </div>
+                <!-- Score and Navigation Section -->
+           <div class="score-navigation">
+               <div class="score-section">
+                   <p>Question: <span id="question-number">50</span></p>
+                   <p>Answer: <span id="answer-number">50</span></p>
+               </div>
+   
+               <div class="controls-section">
+                   <button class="control-btn">Question</button>
+                   <button class="control-btn">Answer</button>
+                   <button class="control-btn">Hints</button>
+               </div>
+           </div>
+           </div>
+          
+       </div>
+   
+   
+          
+       </div>
+       </div>
+    </div>
+
+    <div id="error"></div>
+    
+    <!-- bootstrap 5 -->
+    <script src="assets/js/Bootstrap/bootstrap.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="assets/js/jQuery/jquery-3.6.3.min.js"></script>
+    
+    <!-- result js -->
+    <script src="assets/js/result.js"></script>
+
+    <!-- Custom js -->
+    <script src="assets/js/custom.js"></script>
+    <script>
+// JavaScript to manage selection and interactions
+const questionNumber = document.getElementById('question-number');
+const answerNumber = document.getElementById('answer-number');
+
+const options = document.querySelectorAll('.option');
+const hintButton = document.querySelector('.control-btn:nth-child(3)'); // Assuming Hints button is the third control-btn
+
+// The correct answer (for this question it's B. Mars)
+const correctAnswer = "B. Mars";
+
+// Handle answer selection
+options.forEach(option => {
+    option.addEventListener('click', () => {
+        alert(`You selected: ${option.textContent}`);
+        updateAnswerCount();
+    });
+});
+
+// Function to update answer count
+function updateAnswerCount() {
+    let currentAnswer = parseInt(answerNumber.textContent);
+    answerNumber.textContent = currentAnswer + 1;
+}
+
+// Function to provide a hint by removing 2 wrong options
+hintButton.addEventListener('click', () => {
+    let incorrectOptions = [];
+    
+    // Identify incorrect options
+    options.forEach(option => {
+        if (option.textContent.trim() !== correctAnswer) {
+            incorrectOptions.push(option);
+        }
+    });
+    
+    // Randomly hide two incorrect options
+    const randomIndex1 = Math.floor(Math.random() * incorrectOptions.length);
+    let randomIndex2;
+    
+    do {
+        randomIndex2 = Math.floor(Math.random() * incorrectOptions.length);
+    } while (randomIndex2 === randomIndex1);
+    
+    // Hide the two random incorrect options
+    incorrectOptions[randomIndex1].style.visibility = 'hidden';
+    incorrectOptions[randomIndex2].style.visibility = 'hidden';
+});
+
+
+    </script>
+</body>
+</html>
